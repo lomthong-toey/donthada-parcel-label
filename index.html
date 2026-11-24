@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <title>ใบปะหน้าส่งของมาที่บริษัทดลธาดา</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --green: #153e32;
+      --ink: #172c25;
+      --muted: #4a5e54;
+      --border: #d0dbd3;
+      font-family: 'Noto Sans Thai', 'Leelawadee UI', Tahoma, sans-serif;
+      color: var(--ink);
+      background: #f2f5f1;
+      line-height: 1.55;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .masthead { background: var(--green); color: white; border-bottom: 3px solid #c5a160; }
+    .masthead-inner { max-width: 1160px; margin: auto; padding: 28px 24px; }
+    h1, h2, p { margin: 0; }
+    h1 { font-size: clamp(1.5rem, 4vw, 2.125rem); line-height: 1.35; }
+    h2 { font-size: 1.25rem; line-height: 1.45; }
+    .layout {
+      max-width: 1160px; margin: 32px auto; padding: 0 24px;
+      display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.15fr);
+      gap: 24px; align-items: start;
+    }
+    .card { padding: 28px; border: 1px solid var(--border); border-radius: 16px; background: white; }
+    .help { color: var(--muted); margin-top: 5px; }
+    label { display: block; font-weight: 700; margin: 16px 0 5px; }
+    input, textarea, button { font: inherit; }
+    input, textarea {
+      width: 100%; padding: 10px 12px; border-radius: 8px;
+      border: 1px solid #879c90; background: white; color: var(--ink);
+    }
+    textarea { display: block; min-height: 105px; resize: vertical; }
+    :focus-visible { outline: 3px solid #356e56; outline-offset: 3px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 9px; margin: 20px 0 12px; }
+    button { cursor: pointer; border-radius: 8px; padding: 10px 15px; font-weight: 700; }
+    .primary { color: white; background: var(--green); border: 1px solid var(--green); }
+    .secondary { color: var(--green); background: white; border: 1px solid #879c90; }
+    .privacy, .size { color: var(--muted); font-size: .875rem; }
+    .status:empty { display: none; }
+    .status { margin-bottom: 10px; font-size: .875rem; color: #96382d; }
+    .preview-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 3px 12px; margin-bottom: 12px; }
+    .label {
+      display: grid; grid-template-columns: minmax(0, .77fr) minmax(0, 1.45fr);
+      min-height: 310px; background: white; border: 1px solid #879c90; border-radius: 12px;
+    }
+    .sender, .recipient { padding: 18px; min-width: 0; overflow-wrap: anywhere; }
+    .sender { font-size: .9rem; border-right: 1px dashed #879c90; }
+    .recipient { display: flex; flex-direction: column; justify-content: center; }
+    .role { color: var(--green); font-size: .9rem; font-weight: 700; margin: 0 0 8px; }
+    .recipient-name { font-size: 1.45rem; font-weight: 700; line-height: 1.35; }
+    .recipient-address { font-size: 1.12rem; margin-top: 10px; }
+    .label-phone { margin-top: 8px; font-weight: 700; }
+    #label-name { font-weight: 700; }
+    #label-address { margin-top: 6px; }
+    [data-empty] { color: var(--muted); font-weight: 400 !important; }
+    .preview-note { margin-top: 12px; color: var(--muted); font-size: .875rem; }
+    @media screen and (max-width: 740px) {
+      .layout { grid-template-columns: 1fr; margin: 18px auto; padding: 0 16px; }
+      .masthead-inner, .card { padding: 20px; }
+    }
+    @media screen and (max-width: 440px) {
+      .label { grid-template-columns: 1fr; min-height: 0; }
+      .sender { border-right: 0; border-bottom: 1px dashed #879c90; }
+    }
+    @page { size: A5 landscape; margin: 8mm; }
+    @media print {
+      :root, body { color: black; background: white; }
+      .masthead, .editor, .preview-heading, .preview-note { display: none; }
+      .layout { display: block; margin: 0; padding: 0; max-width: none; }
+      .label {
+        width: 100%; min-height: 114mm; border: .4mm solid black; border-radius: 0;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr); break-inside: avoid;
+      }
+      .sender, .recipient { padding: 6mm; }
+      .sender { border-color: black; font-size: 10.5pt; line-height: 1.45; }
+      .role { color: black; font-size: 11pt; }
+      .recipient-name { font-size: 20pt; }
+      .recipient-address, .recipient .label-phone { font-size: 14pt; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>ใบปะหน้าส่งของมาที่บริษัทดลธาดา</h1>
+    </div>
+  </header>
+  <main class="layout">
+    <section class="card editor" aria-labelledby="editor-title">
+      <h2 id="editor-title">ข้อมูลผู้ส่ง</h2>
+      <p class="help">กรอกข้อมูลทั้ง 3 ช่อง แล้วตรวจสอบตัวอย่างก่อนพิมพ์</p>
+      <form id="sender-form" autocomplete="off">
+        <label for="sender-name">ชื่อ–นามสกุล หรือชื่อบริษัท</label>
+        <input id="sender-name" required maxlength="100" placeholder="เช่น สมใจ ใจดี">
+        <label for="sender-phone">เบอร์โทรศัพท์</label>
+        <input id="sender-phone" type="tel" required maxlength="25" placeholder="เช่น 0812345678">
+        <label for="sender-address">ที่อยู่พร้อมรหัสไปรษณีย์</label>
+        <textarea id="sender-address" required maxlength="400" placeholder="บ้านเลขที่ หมู่ ซอย ถนน แขวง/ตำบล เขต/อำเภอ จังหวัด และรหัสไปรษณีย์"></textarea>
+        <div class="actions">
+          <button class="primary" type="submit">พิมพ์ / บันทึก PDF</button>
+          <button class="secondary" type="reset">ล้างข้อมูล</button>
+        </div>
+        <p class="status" id="status" role="status"></p>
+      </form>
+      <noscript>เปิดใช้งาน JavaScript เพื่อสร้างใบปะหน้า</noscript>
+      <p class="privacy">เว็บใช้ข้อมูลที่กรอกเพื่อจัดทำใบปะหน้าในเบราว์เซอร์เท่านั้น</p>
+    </section>
+    <section aria-labelledby="preview-title">
+      <div class="preview-heading">
+        <h2 id="preview-title">ตัวอย่างใบปะหน้า</h2>
+        <span class="size">A5 แนวนอน · 210 × 148 มม.</span>
+      </div>
+      <div class="label">
+        <div class="sender">
+          <h3 class="role">ผู้ส่ง</h3>
+          <p id="label-name" data-empty>ชื่อผู้ส่ง</p>
+          <p id="label-address" data-empty>ที่อยู่ผู้ส่ง</p>
+          <p id="label-phone" class="label-phone" data-empty>เบอร์โทรผู้ส่ง</p>
+        </div>
+        <div class="recipient">
+          <h3 class="role">ผู้รับ</h3>
+          <p class="recipient-name">บริษัท ดลธาดา จำกัด</p>
+          <p>รับพัสดุออนไลน์</p>
+          <p class="recipient-address">9 ซ.งามวงศ์วาน 23 ต.บางเขน อ.เมือง จ.นนทบุรี 11000</p>
+          <p class="label-phone">โทร. 082-782-6519</p>
+        </div>
+      </div>
+      <p class="preview-note">นำใบนี้ติดบนกล่อง แล้วฝากส่งกับผู้ให้บริการขนส่งเพื่อรับเลขติดตามพัสดุ</p>
+    </section>
+  </main>
+  <script>
+    const form = document.getElementById('sender-form');
+    const status = document.getElementById('status');
+    const fields = [
+      { input: document.getElementById('sender-name'), output: document.getElementById('label-name'), placeholder: 'ชื่อผู้ส่ง' },
+      { input: document.getElementById('sender-phone'), output: document.getElementById('label-phone'), placeholder: 'เบอร์โทรผู้ส่ง', prefix: 'โทร. ' },
+      { input: document.getElementById('sender-address'), output: document.getElementById('label-address'), placeholder: 'ที่อยู่ผู้ส่ง' },
+    ];
+
+    function refreshLabel() {
+      for (const { input, output, placeholder, prefix = '' } of fields) {
+        const value = input.value.trim().replace(/\s+/g, ' ');
+        output.textContent = value ? prefix + value : placeholder;
+        output.toggleAttribute('data-empty', !value);
+      }
+    }
+
+    form.addEventListener('input', () => {
+      status.textContent = '';
+      refreshLabel();
+    });
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const empty = fields.find(({ input }) => !input.value.trim());
+      if (empty) {
+        status.textContent = 'กรุณากรอกข้อมูลผู้ส่งให้ครบก่อนพิมพ์';
+        empty.input.focus();
+        return;
+      }
+      refreshLabel();
+      window.print();
+    });
+
+    form.addEventListener('reset', () => {
+      status.textContent = '';
+      requestAnimationFrame(() => {
+        refreshLabel();
+        fields[0].input.focus();
+      });
+    });
+
+    window.addEventListener('pageshow', refreshLabel);
+  </script>
+</body>
+</html>
